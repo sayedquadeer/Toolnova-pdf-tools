@@ -1,1 +1,1057 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools Nova - Free Online PDF Tools</title>
+    <meta name="description" content="Merge, split, compress, convert, and edit PDF files online for free. Fast, secure, and easy-to-use PDF tools with no installation required.">
+    <meta name="keywords" content="PDF tools, merge PDF, split PDF, compress PDF, PDF to Word, Word to PDF, convert PDF, free online PDF tools">
+    <meta name="author" content="Tools Nova">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="canonical" href="https://toolsnova.com/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://toolsnova.com/">
+    <meta property="og:title" content="Tools Nova - Free Online PDF Tools">
+    <meta property="og:description" content="Merge, split, compress, convert, and edit PDF files online for free. Fast, secure, and easy-to-use.">
+    <meta property="og:image" content="https://toolsnova.com/og-image.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://toolsnova.com/">
+    <meta name="twitter:title" content="Tools Nova - Free Online PDF Tools">
+    <meta name="twitter:description" content="Merge, split, compress, convert, and edit PDF files online for free. Fast, secure, and easy-to-use.">
+    <meta name="twitter:image" content="https://toolsnova.com/og-image.jpg">
+
+    <!-- Favicon Placeholder -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb'><path d='M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z'/></svg>">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://toolsnova.com/#website",
+          "url": "https://toolsnova.com/",
+          "name": "Tools Nova",
+          "description": "Free Online PDF Tools for converting, merging, and editing PDFs.",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://toolsnova.com/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://toolsnova.com/#organization",
+          "name": "Tools Nova",
+          "url": "https://toolsnova.com/",
+          "logo": "https://toolsnova.com/logo.png"
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        /* CSS Variables for Theme */
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --primary-light: #eff6ff;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --max-width: 1200px;
+            --transition: all 0.3s ease;
+        }
+
+        /* Base Styles & Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* AdSense Containers */
+        .ad-container {
+            background-color: #f1f5f9;
+            border: 1px dashed #cbd5e1;
+            border-radius: var(--radius-md);
+            margin: 2rem auto;
+            text-align: center;
+            padding: 1rem;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .ad-placeholder {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .ad-banner {
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Header & Navigation */
+        .header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo svg {
+            width: 32px;
+            height: 32px;
+            fill: var(--primary);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0 3rem;
+            text-align: center;
+            background: linear-gradient(180deg, var(--primary-light) 0%, var(--bg-light) 100%);
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.85rem 1.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: var(--radius-md);
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.39);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: var(--bg-white);
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: #f1f5f9;
+            transform: translateY(-2px);
+        }
+
+        /* Search Section */
+        .search-section {
+            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-box {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1.25rem 1rem 3rem;
+            font-size: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 50px;
+            outline: none;
+            transition: var(--transition);
+            background-color: var(--bg-white);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .search-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1.1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            fill: var(--text-muted);
+            pointer-events: none;
+        }
+
+        /* Tools Grid */
+        .tools-section {
+            padding: 2rem 0 4rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .tool-card {
+            background-color: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 1.75rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(37, 99, 235, 0.3);
+        }
+
+        .tool-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-md);
+            background-color: var(--primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .tool-icon svg {
+            width: 26px;
+            height: 26px;
+            fill: var(--primary);
+        }
+
+        .tool-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .tool-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .tool-card .btn-tool {
+            width: 100%;
+            padding: 0.6rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary);
+            background-color: var(--primary-light);
+            border-radius: var(--radius-md);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .tool-card:hover .btn-tool {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-muted);
+            display: none;
+        }
+
+        /* Features Section */
+        .features-section {
+            background-color: var(--bg-white);
+            padding: 4rem 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background-color: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-icon svg {
+            width: 30px;
+            height: 30px;
+            fill: var(--primary);
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 4rem 0;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            background-color: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.25rem;
+            text-align: left;
+            font-size: 1.05rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-dark);
+        }
+
+        .faq-icon {
+            transition: var(--transition);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: var(--bg-white);
+        }
+
+        .faq-answer p {
+            padding: 0 1.25rem 1.25rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-section .btn-cta {
+            background-color: white;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .cta-section .btn-cta:hover {
+            background-color: #f8fafc;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            padding: 4rem 0 2rem;
+            margin-top: auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-brand h3 svg {
+            fill: var(--primary);
+            width: 28px;
+            height: 28px;
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .footer-column h4 {
+            color: white;
+            font-size: 1.05rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-links a {
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1e293b;
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .mobile-toggle {
+                display: block;
+            }
+            .nav-menu {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: var(--bg-white);
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 1.25rem;
+                border-bottom: 1px solid var(--border-color);
+                box-shadow: var(--shadow-md);
+                display: none;
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo" aria-label="Tools Nova Home">
+                <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                Tools Nova
+            </a>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu">
+                &#9776;
+            </button>
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#" class="nav-link active">Home</a></li>
+                    <li><a href="#tools" class="nav-link">PDF Tools</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Free Online PDF Tools</h1>
+            <p>Merge, Split, Compress, Convert and Edit PDF files quickly, securely and completely free.</p>
+            <div class="hero-buttons">
+                <a href="#tools" class="btn btn-primary">Explore Tools</a>
+                <a href="#about" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Ad Banner Placeholder -->
+    <div class="container">
+        <div class="ad-container ad-banner" aria-label="Advertisement">
+            <span class="ad-placeholder">Advertisement Placement</span>
+        </div>
+    </div>
+
+    <!-- Search & Tools Section -->
+    <main class="container">
+        <section class="search-section">
+            <div class="search-box">
+                <svg class="search-icon" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                <input type="text" id="search-input" class="search-input" placeholder="Search PDF tools (e.g., Merge, Compress, Convert)..." aria-label="Search tools">
+            </div>
+        </section>
+
+        <section id="tools" class="tools-section">
+            <div class="section-header">
+                <h2>All PDF Tools</h2>
+                <p>Select a tool below to start processing your documents safely in your browser.</p>
+            </div>
+
+            <div class="tools-grid" id="tools-grid">
+                
+                <!-- Tool 1 -->
+                <div class="tool-card" data-title="merge pdf combine join">
+                    <div class="tool-icon">
+                        <svg viewBox="0 0 24 24"><path d="M17 20.59L12 15.6 7 20.59 5.59 19.17l5-5 1.41-1.41 1.41 1.41 5 5zM12 2.81l5 5-1.41 1.41-3.59-3.58V12h-2V5.64L6.41 9.22 5 7.81l7-5z"/></svg>
+                    </div>
+                    <h3>Merge PDF</h3>
+                    <p>Combine multiple PDF files into one single organized PDF document quickly.</p>
+                    <a href="#" class="btn-tool" aria-label="Open Merge PDF Tool">Open Tool</a>
+                </div>
+
+                <!-- Tool 2 -->
+                <div class="tool-card" data-title="split pdf separate extract">
+                    <div class="tool-icon">
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-4 4h8v2H9v-2zm0 4h8v2H9v-2z"/></svg>
+                    </div>
+                    <h3>Split PDF</h3>
+                    <p>Separate one PDF into individual pages or specific page ranges effortlessly.</p>
+                    <a href="#" class="btn-tool" aria-label="Open Split PDF Tool">Open Tool</a>
+                </div>
+
+                <!-- Tool 3 -->
+                <div class="tool-card" data-title="compress pdf reduce size shrink">
+                    <div class="tool-icon">
+                        <svg viewBox="0 0 24 24"><path d="M4 9h16v2H4zm0 4h16v2H4zm4 4h8v2H8zM12 3L4 7h16l-8-4z"/></svg>
+                    </div>
+                    <h3>Compress PDF</h3>
+                    <p>Reduce the file size of your PDF while maintaining optimal visual quality.</p>
+                    <a href="#" class="btn-tool" aria-label="Open Compress PDF Tool">Open Tool</a>
+                </div>
+
+                <!-- Tool 4 -->
+                <div class="tool-card" data-title="pdf to word convert docx document">
+                    <div class="tool-icon">
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13zM9.5 11.5c0-.83.67-1.5 1.5-1.5h2c.83 0 1.5.67 1.5 1.5v1c0 .83-.67 1.5-1.5 1.5h-2v2h-1.5v-4.5z"/></svg>
+                    </div>
+                    <h3>PDF to Word</h3>
+                    <p>Convert your PDF files into editable Microsoft Word (DOCX) documents easily.</p>
+                    <a href="#" class="btn-tool" aria-label="Open PDF to Word Tool">Open Tool</a>
+                </div>
+
+                <!-- Tool 5 -->
+                <div class="tool-card" data-title="word to pdf convert docx">
+                    <div class="tool-icon">
+                        <svg viewBox="0 0 24 24"><path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/></svg>
+                    </div>
+                    <h3>Word to PDF</h3>
+                    <p>Transform DOCX files into professional PDF documents instantly.</p>
+                    <a href="#" class="btn-tool" aria-label="Open Word to PDF Tool">Open Tool</a>
+                </div>
+
+                <!-- Tool 6 -->
+                <div class="tool-card" data-title="jpg to pdf image convert png jpeg">
+                    <div class="tool-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+                    </div>
+                    <h3>JPG to PDF</h3>
+                    <p>Convert JPG, PNG, and other image formats into a high-quality PDF file.</p>
+                    <a href="#" class="btn-tool" aria-label="Open JPG to PDF Tool">Open Tool</a>
+                </div>
+
+                <!-- Tool 7 -->
+                <div class="tool-card" data-title="pdf to jpg convert image png jpeg">
+                    <div class="tool-icon">
+                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z"/></svg>
+                    </div>
+                    <h3>PDF to JPG</h3>
+                    <p>Extract all images or save each PDF page as a high-resolution JPG image.</p>
+                    <a href="#" class="btn-tool" aria-label="Open PDF to JPG Tool">Open Tool</a>
+                </div>
+
+                <!-- Tool 8 -->
+                <div class="tool-card" data-title="rotate pdf turn orientation degree">
+                    <div class="tool-icon">
+                        <svg viewBox="0 0 24 24"><path d="M7.47 21.49C4.2 19.93 1.86 16.76 1.5 13H0l2.5-4 2.5 4H3.03c.34 3.14 2.29 5.81 5.08 7.07l-.64 1.42zM12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8z"/></svg>
+                    </div>
+                    <h3>Rotate PDF</h3>
+                    <p>Rotate your PDF pages upside down or sideways to correct orientation.</p>
+                    <a href="#" class="btn-tool" aria-label="Open Rotate PDF Tool">Open Tool</a>
+                </div>
+
+                <!-- Tool 9 -->
+                <div class="tool-card" data-title="unlock pdf remove password permission restriction">
+                    <div class="tool-icon">
+                        <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6h1.9c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm0 12H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/></svg>
+                    </div>
+                    <h3>Unlock PDF</h3>
+                    <p>Remove security passwords and permissions from protected PDF files.</p>
+                    <a href="#" class="btn-tool" aria-label="Open Unlock PDF Tool">Open Tool</a>
+                </div>
+
+                <!-- Tool 10 -->
+                <div class="tool-card" data-title="protect pdf encrypt password security">
+                    <div class="tool-icon">
+                        <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                    </div>
+                    <h3>Protect PDF</h3>
+                    <p>Encrypt your PDF document with a strong password to prevent unauthorized access.</p>
+                    <a href="#" class="btn-tool" aria-label="Open Protect PDF Tool">Open Tool</a>
+                </div>
+
+                <!-- Tool 11 -->
+                <div class="tool-card" data-title="watermark pdf brand text image overlay">
+                    <div class="tool-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                    </div>
+                    <h3>Watermark PDF</h3>
+                    <p>Add a text or image watermark over your PDF pages for copyright protection.</p>
+                    <a href="#" class="btn-tool" aria-label="Open Watermark PDF Tool">Open Tool</a>
+                </div>
+
+                <!-- Tool 12 -->
+                <div class="tool-card" data-title="extract pages pdf select split">
+                    <div class="tool-icon">
+                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                    </div>
+                    <h3>Extract Pages</h3>
+                    <p>Select and extract specific pages to create a brand new PDF file.</p>
+                    <a href="#" class="btn-tool" aria-label="Open Extract Pages Tool">Open Tool</a>
+                </div>
+
+                <!-- Tool 13 -->
+                <div class="tool-card" data-title="remove pages pdf delete discard">
+                    <div class="tool-icon">
+                        <svg viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+                    </div>
+                    <h3>Remove Pages</h3>
+                    <p>Delete unwanted pages from your PDF file in just a few clicks.</p>
+                    <a href="#" class="btn-tool" aria-label="Open Remove Pages Tool">Open Tool</a>
+                </div>
+
+                <!-- Tool 14 -->
+                <div class="tool-card" data-title="organize pdf reorder arrange pages">
+                    <div class="tool-icon">
+                        <svg viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>
+                    </div>
+                    <h3>Organize PDF</h3>
+                    <p>Reorder, sort, or delete PDF pages easily with a visual drag-and-drop manager.</p>
+                    <a href="#" class="btn-tool" aria-label="Open Organize PDF Tool">Open Tool</a>
+                </div>
+
+                <!-- Tool 15 -->
+                <div class="tool-card" data-title="page numbers pdf header footer count">
+                    <div class="tool-icon">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4V4zm2 2v12h12V6H6zm3 3h2v6H9V9zm4 0h2v6h-2V9z"/></svg>
+                    </div>
+                    <h3>Page Numbers</h3>
+                    <p>Add page numbers into your PDF with custom position, dimensions, and font style.</p>
+                    <a href="#" class="btn-tool" aria-label="Open Page Numbers Tool">Open Tool</a>
+                </div>
+
+                <!-- Search No Results Message -->
+                <div class="no-results" id="no-results">
+                    <h3>No tools found</h3>
+                    <p>Try searching for a different keyword like "Merge", "Convert", or "Split".</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Mid Content Ad Banner Placeholder -->
+    <div class="container">
+        <div class="ad-container ad-banner" aria-label="Advertisement">
+            <span class="ad-placeholder">In-Feed Advertisement Placeholder</span>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="features-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Tools Nova?</h2>
+                <p>Designed for fast processing, user privacy, and zero fees.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                    </div>
+                    <h3>100% Secure & Private</h3>
+                    <p>Your privacy is important to us. File processing is safe, encrypted, and files are automatically deleted after processing.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M13 2.05v3.03c3.39.49 6 3.39 6 6.92 0 .9-.18 1.75-.48 2.54l2.6 1.53c.56-1.24.88-2.62.88-4.07 0-5.18-3.95-9.45-9-9.92zM12 19c-3.87 0-7-3.13-7-7 0-3.53 2.61-6.43 6-6.92V2.05C5.94 2.55 2 6.97 2 12c0 5.52 4.48 10 10 10 2.86 0 5.43-1.21 7.25-3.15l-2.14-1.72C15.68 18.25 13.94 19 12 19z"/></svg>
+                    </div>
+                    <h3>Lightning Fast</h3>
+                    <p>Our web-based platform is optimized for performance, enabling you to process PDFs in seconds right from your browser.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                    </div>
+                    <h3>No Software Installation</h3>
+                    <p>Tools Nova runs completely inside modern web browsers. No registration, software installation, or plugins required.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about using Tools Nova.</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Is Tools Nova completely free to use?
+                        <span class="faq-icon">&#9660;</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! All PDF tools on Tools Nova are 100% free with no hidden charges, trial periods, or registration required.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Are my files safe and private?
+                        <span class="faq-icon">&#9660;</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolute security is guaranteed. Files uploaded are protected via SSL encryption and are permanently deleted from server memory shortly after conversion.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Can I use Tools Nova on mobile devices?
+                        <span class="faq-icon">&#9660;</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, Tools Nova is fully responsive and designed mobile-first. It works seamlessly on iOS, Android, tablets, and desktop computers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call-To-Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to convert your PDF files?</h2>
+            <p>Start managing your PDF files in seconds with Tools Nova's quick, reliable tool suite.</p>
+            <a href="#tools" class="btn btn-cta">Get Started Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                        Tools Nova
+                    </h3>
+                    <p>Tools Nova provides free, accessible online utilities to manage, edit, split, and convert PDF documents easily with zero software installation required.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>PDF Tools</h4>
+                    <ul class="footer-links">
+                        <li><a href="#tools">Merge PDF</a></li>
+                        <li><a href="#tools">Split PDF</a></li>
+                        <li><a href="#tools">Compress PDF</a></li>
+                        <li><a href="#tools">PDF to Word</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact" id="contact">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tools Nova. All rights reserved. Hosted on GitHub Pages.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Deferred Vanilla JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Navigation Toggle
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const navMenu = document.getElementById('nav-menu');
+
+            if (mobileToggle) {
+                mobileToggle.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                });
+            }
+
+            // Real-time Tool Filtering / Search Functionality
+            const searchInput = document.getElementById('search-input');
+            const toolCards = document.querySelectorAll('.tool-card');
+            const noResults = document.getElementById('no-results');
+
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    const query = e.target.value.toLowerCase().trim();
+                    let visibleCount = 0;
+
+                    toolCards.forEach(card => {
+                        const titleAndTags = card.getAttribute('data-title').toLowerCase();
+                        if (titleAndTags.includes(query)) {
+                            card.style.display = 'flex';
+                            visibleCount++;
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+
+                    if (visibleCount === 0) {
+                        noResults.style.display = 'block';
+                    } else {
+                        noResults.style.display = 'none';
+                    }
+                });
+            }
+
+            // Accordion Interactivity for FAQ Section
+            const faqQuestions = document.querySelectorAll('.faq-question');
+
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const faqItem = question.parentElement;
+                    const answer = faqItem.querySelector('.faq-answer');
+                    const isExpanded = question.getAttribute('aria-expanded') === 'true';
+
+                    // Close all FAQs
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        item.classList.remove('active');
+                        item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                        item.querySelector('.faq-answer').style.maxHeight = null;
+                    });
+
+                    // Toggle clicked FAQ item
+                    if (!isExpanded) {
+                        faqItem.classList.add('active');
+                        question.setAttribute('aria-expanded', 'true');
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
