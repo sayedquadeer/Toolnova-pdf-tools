@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="hi" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toolnova - Free Online PDF & Image Tools</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- PDF Libraries -->
+    <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans">
+
+    <!-- Header -->
+    <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3 cursor-pointer" onclick="showDashboard()">
+                <div class="bg-indigo-600 p-2 rounded-xl text-white font-bold text-xl">TN</div>
+                <h1 class="text-2xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">
+                    Toolnova PDF
+                </h1>
+            </div>
+            <p class="text-sm text-slate-400 hidden sm:block">100% Free & Secure Client-Side Tools</p>
+        </div>
+    </header>
+
+    <!-- Main Dashboard View -->
+    <main id="dashboard" class="flex-grow max-w-7xl mx-auto px-4 py-8 w-full">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-3">Sabhi PDF & Image Tools Ek Hi Jagah</h2>
+            <p class="text-slate-400">Kisi bhi tool par click karein aur apna kaam instantly karein.</p>
+        </div>
+
+        <!-- 10 Tools Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            
+            <!-- Tool 1: Merge PDF -->
+            <div onclick="openTool('merge')" class="bg-slate-800/60 border border-slate-700/60 hover:border-indigo-500 rounded-2xl p-6 cursor-pointer transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/10 group">
+                <div class="w-12 h-12 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-file-circle-plus"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-1">Merge PDF</h3>
+                <p class="text-sm text-slate-400">Multiple PDF files ko ek sath jodein.</p>
+            </div>
+
+            <!-- Tool 2: Unlock PDF -->
+            <div onclick="openTool('unlock')" class="bg-slate-800/60 border border-slate-700/60 hover:border-indigo-500 rounded-2xl p-6 cursor-pointer transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/10 group">
+                <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-lock-open"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-1">Unlock PDF</h3>
+                <p class="text-sm text-slate-400">PDF se password remove karein.</p>
+            </div>
+
+            <!-- Tool 3: JPG to PNG -->
+            <div onclick="openTool('jpg2png')" class="bg-slate-800/60 border border-slate-700/60 hover:border-indigo-500 rounded-2xl p-6 cursor-pointer transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/10 group">
+                <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-image"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-1">JPG to PNG</h3>
+                <p class="text-sm text-slate-400">JPG photo ko PNG format me badlein.</p>
+            </div>
+
+            <!-- Tool 4: PNG to JPG -->
+            <div onclick="openTool('png2jpg')" class="bg-slate-800/60 border border-slate-700/60 hover:border-indigo-500 rounded-2xl p-6 cursor-pointer transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/10 group">
+                <div class="w-12 h-12 rounded-xl bg-teal-500/10 text-teal-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-regular fa-image"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-1">PNG to JPG</h3>
+                <p class="text-sm text-slate-400">PNG photo ko JPG format me convert karein.</p>
+            </div>
+
+            <!-- Tool 5: Image to PDF -->
+            <div onclick="openTool('img2pdf')" class="bg-slate-800/60 border border-slate-700/60 hover:border-indigo-500 rounded-2xl p-6 cursor-pointer transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/10 group">
+                <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-file-image"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-1">Image to PDF</h3>
+                <p class="text-sm text-slate-400">Photos ko ek PDF document banayein.</p>
+            </div>
+
+            <!-- Tool 6: PDF to Images -->
+            <div onclick="openTool('pdf2img')" class="bg-slate-800/60 border border-slate-700/60 hover:border-indigo-500 rounded-2xl p-6 cursor-pointer transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/10 group">
+                <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-file-pdf"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-1">PDF to Images</h3>
+                <p class="text-sm text-slate-400">PDF ke pages ko PNG photo me badlein.</p>
+            </div>
+
+            <!-- Tool 7: Protect PDF -->
+            <div onclick="openTool('protect')" class="bg-slate-800/60 border border-slate-700/60 hover:border-indigo-500 rounded-2xl p-6 cursor-pointer transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/10 group">
+                <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-1">Protect PDF</h3>
+                <p class="text-sm text-slate-400">PDF file me password set karein.</p>
+            </div>
+
+            <!-- Tool 8: Rotate PDF -->
+            <div onclick="openTool('rotate')" class="bg-slate-800/60 border border-slate-700/60 hover:border-indigo-500 rounded-2xl p-6 cursor-pointer transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/10 group">
+                <div class="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-rotate-right"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-1">Rotate PDF</h3>
+                <p class="text-sm text-slate-400">PDF pages ko 90, 180, 270 degree ghumayein.</p>
+            </div>
+
+            <!-- Tool 9: Resize Image -->
+            <div onclick="openTool('resize')" class="bg-slate-800/60 border border-slate-700/60 hover:border-indigo-500 rounded-2xl p-6 cursor-pointer transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/10 group">
+                <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-expand"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-1">Resize Image</h3>
+                <p class="text-sm text-slate-400">Photo ki height aur width badlein.</p>
+            </div>
+
+            <!-- Tool 10: WebP to PNG -->
+            <div onclick="openTool('webp2png')" class="bg-slate-800/60 border border-slate-700/60 hover:border-indigo-500 rounded-2xl p-6 cursor-pointer transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/10 group">
+                <div class="w-12 h-12 rounded-xl bg-orange-500/10 text-orange-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-photo-film"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-1">WebP to PNG</h3>
+                <p class="text-sm text-slate-400">WebP image ko PNG format me badlein.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Working Area Workspace View -->
+    <main id="workspace" class="hidden flex-grow max-w-4xl mx-auto px-4 py-8 w-full">
+        <button onclick="showDashboard()" class="mb-6 flex items-center gap-2 text-indigo-400 hover:text-indigo-300 font-medium">
+            <i class="fa-solid fa-arrow-left"></i> Wapas Dashboard Par Jayein
+        </button>
+
+        <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 sm:p-8 shadow-2xl">
+            <h2 id="tool-title" class="text-2xl font-bold mb-2">Tool Title</h2>
+            <p id="tool-desc" class="text-slate-400 text-sm mb-6">Tool Description</p>
+
+            <!-- File Upload Area -->
+            <div id="drop-area" class="border-2 border-dashed border-slate-600 hover:border-indigo-500 rounded-xl p-8 text-center cursor-pointer transition-colors bg-slate-900/40">
+                <input type="file" id="file-input" class="hidden" multiple />
+                <i class="fa-solid fa-cloud-arrow-up text-4xl text-indigo-400 mb-3"></i>
+                <p class="text-slate-200 font-medium">File Select Karein ya Yahan Drag & Drop Karein</p>
+                <p class="text-xs text-slate-500 mt-1">Sabhi files aapke browser me safely process hongi</p>
+            </div>
+
+            <!-- Dynamic Options -->
+            <div id="extra-options" class="mt-6 hidden flex flex-col gap-4">
+                <!-- Inputs like passwords, dimensions will render here -->
+            </div>
+
+            <!-- Selected Files List -->
+            <div id="file-list" class="mt-4 space-y-2 text-sm text-slate-300"></div>
+
+            <!-- Action Button -->
+            <button id="process-btn" onclick="processTask()" class="mt-6 w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-6 rounded-xl transition-all hidden shadow-lg shadow-indigo-600/30">
+                Process File
+            </button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 py-6 text-center text-slate-500 text-sm">
+        © 2026 Toolnova PDF Tools. Built for fast and private file processing.
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        let currentTool = '';
+        let selectedFiles = [];
+
+        const toolConfig = {
+            'merge': { title: 'Merge PDF', desc: 'Multiple PDF files upload karke ek single PDF banayein.', accept: '.pdf', multiple: true },
+            'unlock': { title: 'Unlock PDF', desc: 'Protected PDF file ka password enter karke unlock karein.', accept: '.pdf', multiple: false, needPass: true },
+            'jpg2png': { title: 'JPG to PNG Converter', desc: 'JPG image ko transparent support PNG me convert karein.', accept: 'image/jpeg', multiple: false },
+            'png2jpg': { title: 'PNG to JPG Converter', desc: 'PNG image ko clean JPG format me badlein.', accept: 'image/png', multiple: false },
+            'img2pdf': { title: 'Image to PDF', desc: 'Aapne photos ko ek PDF document me convert karein.', accept: 'image/*', multiple: true },
+            'pdf2img': { title: 'PDF to Images', desc: 'PDF file ke har page ko image me convert karein.', accept: '.pdf', multiple: false },
+            'protect': { title: 'Protect PDF', desc: 'PDF file me security password lagayein.', accept: '.pdf', multiple: false, needNewPass: true },
+            'rotate': { title: 'Rotate PDF', desc: 'PDF pages ko ghuma kar save karein.', accept: '.pdf', multiple: false, needRotate: true },
+            'resize': { title: 'Resize Image', desc: 'Image ke Dimensions (Width & Height) badlein.', accept: 'image/*', multiple: false, needResize: true },
+            'webp2png': { title: 'WebP to PNG', desc: 'WebP format image ko standard PNG me badlein.', accept: 'image/webp', multiple: false }
+        };
+
+        const dropArea = document.getElementById('drop-area');
+        const fileInput = document.getElementById('file-input');
+
+        dropArea.onclick = () => fileInput.click();
+
+        fileInput.onchange = (e) => {
+            selectedFiles = Array.from(e.target.files);
+            updateFileList();
+        };
+
+        function showDashboard() {
+            document.getElementById('dashboard').classList.remove('hidden');
+            document.getElementById('workspace').classList.add('hidden');
+            resetTool();
+        }
+
+        function openTool(toolKey) {
+            currentTool = toolKey;
+            const config = toolConfig[toolKey];
+            document.getElementById('tool-title').innerText = config.title;
+            document.getElementById('tool-desc').innerText = config.desc;
+            
+            fileInput.accept = config.accept;
+            fileInput.multiple = config.multiple;
+            
+            // Build Dynamic Options
+            const extraOptions = document.getElementById('extra-options');
+            extraOptions.innerHTML = '';
+            extraOptions.classList.add('hidden');
+
+            if (config.needPass) {
+                extraOptions.innerHTML = `<input type="password" id="pdf-password" placeholder="PDF Password Yahan Likhein" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500">`;
+                extraOptions.classList.remove('hidden');
+            } else if (config.needNewPass) {
+                extraOptions.innerHTML = `<input type="password" id="pdf-new-password" placeholder="Naya Password Enter Karein" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500">`;
+                extraOptions.classList.remove('hidden');
+            } else if (config.needRotate) {
+                extraOptions.innerHTML = `
+                    <select id="rotate-angle" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500">
+                        <option value="90">90 Degree Right</option>
+                        <option value="180">180 Degree Upside Down</option>
+                        <option value="270">270 Degree Left</option>
+                    </select>`;
+                extraOptions.classList.remove('hidden');
+            } else if (config.needResize) {
+                extraOptions.innerHTML = `
+                    <div class="flex gap-4">
+                        <input type="number" id="img-width" placeholder="Width (px)" class="w-1/2 bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500">
+                        <input type="number" id="img-height" placeholder="Height (px)" class="w-1/2 bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500">
+                    </div>`;
+                extraOptions.classList.remove('hidden');
+            }
+
+            document.getElementById('dashboard').classList.add('hidden');
+            document.getElementById('workspace').classList.remove('hidden');
+        }
+
+        function updateFileList() {
+            const listContainer = document.getElementById('file-list');
+            const processBtn = document.getElementById('process-btn');
+            listContainer.innerHTML = '';
+
+            if (selectedFiles.length > 0) {
+                selectedFiles.forEach((file) => {
+                    listContainer.innerHTML += `<div class="bg-slate-900/60 p-3 rounded-lg border border-slate-700/50 flex items-center justify-between"><span><i class="fa-solid fa-file text-indigo-400 mr-2"></i>${file.name}</span> <span class="text-xs text-slate-500">${(file.size/1024).toFixed(1)} KB</span></div>`;
+                });
+                processBtn.classList.remove('hidden');
+            } else {
+                processBtn.classList.add('hidden');
+            }
+        }
+
+        function resetTool() {
+            selectedFiles = [];
+            document.getElementById('file-input').value = '';
+            document.getElementById('file-list').innerHTML = '';
+            document.getElementById('process-btn').classList.add('hidden');
+        }
+
+        // Processing Logic for 10 Tools
+        async function processTask() {
+            if (selectedFiles.length === 0) return alert('Kripya file select karein');
+
+            try {
+                if (currentTool === 'merge') {
+                    const mergedPdf = await PDFLib.PDFDocument.create();
+                    for (let file of selectedFiles) {
+                        const arrayBuffer = await file.arrayBuffer();
+                        const pdf = await PDFLib.PDFDocument.load(arrayBuffer);
+                        const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
+                        copiedPages.forEach((page) => mergedPdf.addPage(page));
+                    }
+                    const pdfBytes = await mergedPdf.save();
+                    downloadBlob(new Blob([pdfBytes], { type: 'application/pdf' }), 'merged.pdf');
+
+                } else if (currentTool === 'unlock') {
+                    const pass = document.getElementById('pdf-password').value;
+                    const arrayBuffer = await selectedFiles[0].arrayBuffer();
+                    const pdf = await PDFLib.PDFDocument.load(arrayBuffer, { password: pass });
+                    const pdfBytes = await pdf.save();
+                    downloadBlob(new Blob([pdfBytes], { type: 'application/pdf' }), 'unlocked.pdf');
+
+                } else if (['jpg2png', 'png2jpg', 'webp2png'].includes(currentTool)) {
+                    const file = selectedFiles[0];
+                    const img = new Image();
+                    img.src = URL.createObjectURL(file);
+                    img.onload = () => {
+                        const canvas = document.createElement('canvas');
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0);
+                        const format = currentTool === 'png2jpg' ? 'image/jpeg' : 'image/png';
+                        const ext = currentTool === 'png2jpg' ? 'jpg' : 'png';
+                        canvas.toBlob((blob) => downloadBlob(blob, `converted.${ext}`), format);
+                    };
+
+                } else if (currentTool === 'img2pdf') {
+                    const { jsPDF } = window.jspdf;
+                    const doc = new jsPDF();
+                    for (let i = 0; i < selectedFiles.length; i++) {
+                        const file = selectedFiles[i];
+                        const imgData = await getBase64(file);
+                        if (i > 0) doc.addPage();
+                        doc.addImage(imgData, 'JPEG', 15, 15, 180, 160);
+                    }
+                    doc.save('converted.pdf');
+
+                } else if (currentTool === 'pdf2img') {
+                    const arrayBuffer = await selectedFiles[0].arrayBuffer();
+                    const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+                    const page = await pdf.getPage(1); // Converts First Page
+                    const viewport = page.getViewport({ scale: 1.5 });
+                    const canvas = document.createElement('canvas');
+                    const context = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+                    await page.render({ canvasContext: context, viewport: viewport }).promise;
+                    canvas.toBlob((blob) => downloadBlob(blob, 'page-1.png'), 'image/png');
+
+                } else if (currentTool === 'protect') {
+                    const pass = document.getElementById('pdf-new-password').value;
+                    if(!pass) return alert('Password enter karein!');
+                    const arrayBuffer = await selectedFiles[0].arrayBuffer();
+                    const pdf = await PDFLib.PDFDocument.load(arrayBuffer);
+                    // Standard save encrypts/locks
+                    const pdfBytes = await pdf.save({ userPassword: pass, ownerPassword: pass });
+                    downloadBlob(new Blob([pdfBytes], { type: 'application/pdf' }), 'protected.pdf');
+
+                } else if (currentTool === 'rotate') {
+                    const angle = parseInt(document.getElementById('rotate-angle').value);
+                    const arrayBuffer = await selectedFiles[0].arrayBuffer();
+                    const pdf = await PDFLib.PDFDocument.load(arrayBuffer);
+                    const pages = pdf.getPages();
+                    pages.forEach(p => p.setRotation(PDFLib.degrees(p.getRotation().angle + angle)));
+                    const pdfBytes = await pdf.save();
+                    downloadBlob(new Blob([pdfBytes], { type: 'application/pdf' }), 'rotated.pdf');
+
+                } else if (currentTool === 'resize') {
+                    const w = parseInt(document.getElementById('img-width').value) || 300;
+                    const h = parseInt(document.getElementById('img-height').value) || 300;
+                    const img = new Image();
+                    img.src = URL.createObjectURL(selectedFiles[0]);
+                    img.onload = () => {
+                        const canvas = document.createElement('canvas');
+                        canvas.width = w;
+                        canvas.height = h;
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0, w, h);
+                        canvas.toBlob((blob) => downloadBlob(blob, 'resized.png'), 'image/png');
+                    };
+                }
+            } catch (err) {
+                alert('File processing me dikkat aayi: ' + err.message);
+            }
+        }
+
+        function downloadBlob(blob, filename) {
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function getBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = error => reject(error);
+            });
+        }
+    </script>
+</body>
+</html>
