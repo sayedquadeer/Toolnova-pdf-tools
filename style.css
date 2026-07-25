@@ -1,0 +1,192 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f8fafc;
+    color: #334155;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Navbar */
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1rem 2rem;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #64748b;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links a.active, .nav-links a:hover {
+    color: #2563eb;
+}
+
+/* Sub-header */
+.sub-header {
+    text-align: center;
+    padding: 2.5rem 1rem 1.5rem;
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+/* Main Grid Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem 3rem;
+    flex: 1;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Cards Design */
+.tool-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.tool-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.icon-box {
+    background-color: #eff6ff;
+    color: #2563eb;
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.tool-card h3 {
+    font-size: 1.1rem;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+}
+
+.tool-card p {
+    font-size: 0.875rem;
+    color: #64748b;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.open-btn {
+    width: 100%;
+    padding: 0.6rem;
+    background-color: #eff6ff;
+    color: #2563eb;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.tool-card:hover .open-btn {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+/* Modal Popup */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #64748b;
+}
+
+.modal-body {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.action-btn {
+    padding: 0.75rem;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.action-btn:hover {
+    background: #1d4ed8;
+}
+
+.status-msg {
+    font-size: 0.9rem;
+    text-align: center;
+}
