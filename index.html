@@ -1,19 +1,17 @@
 <!DOCTYPE html>
-<html lang="hi" class="dark">
-<<title>ToolNova PDF - Free Online PDF & Image Tools</title>
-
-<meta name="description" content="Free online PDF and Image tools. Merge PDF, Compress PDF, JPG to PNG, PNG to JPG, Image to PDF, PDF to Images, Rotate PDF and more. Fast, secure and works in your browser.">
-
-<meta name="keywords" content="pdf tools,pdf editor,merge pdf,split pdf,compress pdf,image to pdf,jpg to png,png to jpg,pdf converter,free pdf tools,online pdf tools,image tools">
-
-<meta name="robots" content="index,follow">
-<meta name="author" content="ToolNova PDF">
-<meta name="language" content="English">
-
-<link rel="canonical" href="https://YOURUSERNAME.github.io/">>
+<html lang="en" class="dark">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toolnova - Free Online PDF & Image Tools</title>
+    <title>ToolNova PDF - Free Online PDF & Image Tools</title>
+
+    <meta name="description" content="Free online PDF and Image tools. Merge PDF, Compress PDF, JPG to PNG, PNG to JPG, Image to PDF, PDF to Images, Rotate PDF and more. Fast, secure and works in your browser.">
+    <meta name="keywords" content="pdf tools,pdf editor,merge pdf,split pdf,compress pdf,image to pdf,jpg to png,png to jpg,pdf converter,free pdf tools,online pdf tools,image tools">
+    <meta name="robots" content="index,follow">
+    <meta name="author" content="ToolNova PDF">
+    <meta name="language" content="English">
+    <meta name="google-site-verification" content="6jGI388ZyC91e5yX7iLPLmJIvpFDZgkl5B8owsv58Bc" />
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
@@ -22,6 +20,7 @@
     <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    
     <script>
         pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
         tailwind.config = {
@@ -33,7 +32,7 @@
                     }
                 }
             }
-        }<meta name="google-site-verification" content="6jGI388ZyC91e5yX7iLPLmJIvpFDZgkl5B8owsv58Bc" />
+        };
     </script>
 </head>
 <body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans">
@@ -54,8 +53,8 @@
     <!-- Main Dashboard View -->
     <main id="dashboard" class="flex-grow max-w-7xl mx-auto px-4 py-8 w-full">
         <div class="text-center mb-10">
-            <h2 class="text-3xl sm:text-4xl font-bold mb-3">Sabhi PDF & Image Tools Ek Hi Jagah</h2>
-            <p class="text-slate-400">Kisi bhi tool par click karein aur apna kaam instantly karein.</p>
+            <h1 class="text-3xl sm:text-4xl font-bold mb-3">All PDF & Image Tools in One Place</h1>
+            <p class="text-slate-400">Click on any tool to perform your task instantly.</p>
         </div>
 
         <!-- 10 Tools Grid -->
@@ -67,7 +66,7 @@
                     <i class="fa-solid fa-file-circle-plus"></i>
                 </div>
                 <h3 class="text-lg font-bold mb-1">Merge PDF</h3>
-                <p class="text-sm text-slate-400">Multiple PDF files ko ek sath jodein.</p>
+                <p class="text-sm text-slate-400">Combine multiple PDF files into one.</p>
             </div>
 
             <!-- Tool 2: Unlock PDF -->
@@ -76,7 +75,7 @@
                     <i class="fa-solid fa-lock-open"></i>
                 </div>
                 <h3 class="text-lg font-bold mb-1">Unlock PDF</h3>
-                <p class="text-sm text-slate-400">PDF se password remove karein.</p>
+                <p class="text-sm text-slate-400">Remove password protection from PDF.</p>
             </div>
 
             <!-- Tool 3: JPG to PNG -->
@@ -85,7 +84,7 @@
                     <i class="fa-solid fa-image"></i>
                 </div>
                 <h3 class="text-lg font-bold mb-1">JPG to PNG</h3>
-                <p class="text-sm text-slate-400">JPG photo ko PNG format me badlein.</p>
+                <p class="text-sm text-slate-400">Convert JPG images to PNG format.</p>
             </div>
 
             <!-- Tool 4: PNG to JPG -->
@@ -94,7 +93,7 @@
                     <i class="fa-regular fa-image"></i>
                 </div>
                 <h3 class="text-lg font-bold mb-1">PNG to JPG</h3>
-                <p class="text-sm text-slate-400">PNG photo ko JPG format me convert karein.</p>
+                <p class="text-sm text-slate-400">Convert PNG images to JPG format.</p>
             </div>
 
             <!-- Tool 5: Image to PDF -->
@@ -103,7 +102,225 @@
                     <i class="fa-solid fa-file-image"></i>
                 </div>
                 <h3 class="text-lg font-bold mb-1">Image to PDF</h3>
-                <p class="text-sm text-slate-400">Photos ko ek PDF document banayein.</p>
+                <p class="text-sm text-slate-400">Convert your images into a PDF document.</p>
+            </div>
+
+            <!-- Tool 6: PDF to Images -->
+            <div onclick="openTool('pdf2img')" class="bg-slate-800/60 border border-slate-700/60 hover:border-indigo-500 rounded-2xl p-6 cursor-pointer transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/10 group">
+                <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-file-pdf"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-1">PDF to Images</h3>
+                <p class="text-sm text-slate-400">Convert PDF pages into PNG images.</p>
+            </div>
+
+            <!-- Tool 7: Protect PDF -->
+            <div onclick="openTool('protect')" class="bg-slate-800/60 border border-slate-700/60 hover:border-indigo-500 rounded-2xl p-6 cursor-pointer transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/10 group">
+                <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-1">Protect PDF</h3>
+                <p class="text-sm text-slate-400">Set password protection for your PDF file.</p>
+            </div>
+
+            <!-- Tool 8: Rotate PDF -->
+            <div onclick="openTool('rotate')" class="bg-slate-800/60 border border-slate-700/60 hover:border-indigo-500 rounded-2xl p-6 cursor-pointer transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/10 group">
+                <div class="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-rotate-right"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-1">Rotate PDF</h3>
+                <p class="text-sm text-slate-400">Rotate PDF pages by 90, 180, or 270 degrees.</p>
+            </div>
+
+            <!-- Tool 9: Resize Image -->
+            <div onclick="openTool('resize')" class="bg-slate-800/60 border border-slate-700/60 hover:border-indigo-500 rounded-2xl p-6 cursor-pointer transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/10 group">
+                <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-expand"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-1">Resize Image</h3>
+                <p class="text-sm text-slate-400">Change image height and width dimensions.</p>
+            </div>
+
+            <!-- Tool 10: WebP to PNG -->
+            <div onclick="openTool('webp2png')" class="bg-slate-800/60 border border-slate-700/60 hover:border-indigo-500 rounded-2xl p-6 cursor-pointer transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/10 group">
+                <div class="w-12 h-12 rounded-xl bg-orange-500/10 text-orange-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-photo-film"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-1">WebP to PNG</h3>
+                <p class="text-sm text-slate-400">Convert WebP images to PNG format.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Working Area Workspace View -->
+    <main id="workspace" class="hidden flex-grow max-w-4xl mx-auto px-4 py-8 w-full">
+        <button onclick="showDashboard()" class="mb-6 flex items-center gap-2 text-indigo-400 hover:text-indigo-300 font-medium">
+            <i class="fa-solid fa-arrow-left"></i> Back to Dashboard
+        </button>
+
+        <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 sm:p-8 shadow-2xl">
+            <h2 id="tool-title" class="text-2xl font-bold mb-2">Tool Title</h2>
+            <p id="tool-desc" class="text-slate-400 text-sm mb-6">Tool Description</p>
+
+            <!-- File Upload Area -->
+            <div id="drop-area" class="border-2 border-dashed border-slate-600 hover:border-indigo-500 rounded-xl p-8 text-center cursor-pointer transition-colors bg-slate-900/40">
+                <input type="file" id="file-input" class="hidden" multiple />
+                <i class="fa-solid fa-cloud-arrow-up text-4xl text-indigo-400 mb-3"></i>
+                <p class="text-slate-200 font-medium">Select Files or Drag & Drop Here</p>
+                <p class="text-xs text-slate-500 mt-1">All files are securely processed inside your browser</p>
+            </div>
+
+            <!-- Dynamic Options -->
+            <div id="extra-options" class="mt-6 hidden flex flex-col gap-4"></div>
+
+            <!-- Selected Files List -->
+            <div id="file-list" class="mt-4 space-y-2 text-sm text-slate-300"></div>
+
+            <!-- Action Button -->
+            <button id="process-btn" onclick="processTask()" class="mt-6 w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-6 rounded-xl transition-all hidden shadow-lg shadow-indigo-600/30">
+                Process File
+            </button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 py-6 text-center text-slate-500 text-sm">
+        © 2026 Toolnova PDF Tools. Built for fast and private file processing.
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        let currentTool = '';
+        let selectedFiles = [];
+
+        const toolConfig = {
+            'merge': { title: 'Merge PDF', desc: 'Upload multiple PDF files to merge into a single document.', accept: '.pdf', multiple: true },
+            'unlock': { title: 'Unlock PDF', desc: 'Enter password to remove protection from your PDF file.', accept: '.pdf', multiple: false, needPass: true },
+            'jpg2png': { title: 'JPG to PNG Converter', desc: 'Convert JPG images to PNG format with transparency support.', accept: 'image/jpeg', multiple: false },
+            'png2jpg': { title: 'PNG to JPG Converter', desc: 'Convert PNG images into clean JPG format.', accept: 'image/png', multiple: false },
+            'img2pdf': { title: 'Image to PDF', desc: 'Convert your photos into a single PDF document.', accept: 'image/*', multiple: true },
+            'pdf2img': { title: 'PDF to Images', desc: 'Convert every page of a PDF file into PNG images.', accept: '.pdf', multiple: false },
+            'protect': { title: 'Protect PDF', desc: 'Set a security password for your PDF file.', accept: '.pdf', multiple: false, needNewPass: true },
+            'rotate': { title: 'Rotate PDF', desc: 'Rotate PDF pages and save the document.', accept: '.pdf', multiple: false, needRotate: true },
+            'resize': { title: 'Resize Image', desc: 'Modify Image Dimensions (Width & Height).', accept: 'image/*', multiple: false, needResize: true },
+            'webp2png': { title: 'WebP to PNG', desc: 'Convert WebP format images to standard PNG format.', accept: 'image/webp', multiple: false }
+        };
+
+        const dropArea = document.getElementById('drop-area');
+        const fileInput = document.getElementById('file-input');
+
+        dropArea.onclick = () => fileInput.click();
+
+        fileInput.onchange = (e) => {
+            selectedFiles = Array.from(e.target.files);
+            updateFileList();
+        };
+
+        function showDashboard() {
+            document.getElementById('dashboard').classList.remove('hidden');
+            document.getElementById('workspace').classList.add('hidden');
+            resetTool();
+        }
+
+        function openTool(toolKey) {
+            currentTool = toolKey;
+            const config = toolConfig[toolKey];
+            document.getElementById('tool-title').innerText = config.title;
+            document.getElementById('tool-desc').innerText = config.desc;
+            
+            fileInput.accept = config.accept;
+            fileInput.multiple = config.multiple;
+            
+            const extraOptions = document.getElementById('extra-options');
+            extraOptions.innerHTML = '';
+            extraOptions.classList.add('hidden');
+
+            if (config.needPass) {
+                extraOptions.innerHTML = `<input type="password" id="pdf-password" placeholder="Enter PDF Password" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500">`;
+                extraOptions.classList.remove('hidden');
+            } else if (config.needNewPass) {
+                extraOptions.innerHTML = `<input type="password" id="pdf-new-password" placeholder="Enter New Password" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500">`;
+                extraOptions.classList.remove('hidden');
+            } else if (config.needRotate) {
+                extraOptions.innerHTML = `
+                    <select id="rotate-angle" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500">
+                        <option value="90">90 Degrees Right</option>
+                        <option value="180">180 Degrees Upside Down</option>
+                        <option value="270">270 Degrees Left</option>
+                    </select>`;
+                extraOptions.classList.remove('hidden');
+            } else if (config.needResize) {
+                extraOptions.innerHTML = `
+                    <div class="flex gap-4">
+                        <input type="number" id="img-width" placeholder="Width (px)" class="w-1/2 bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500">
+                        <input type="number" id="img-height" placeholder="Height (px)" class="w-1/2 bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500">
+                    </div>`;
+                extraOptions.classList.remove('hidden');
+            }
+
+            document.getElementById('dashboard').classList.add('hidden');
+            document.getElementById('workspace').classList.remove('hidden');
+        }
+
+        function updateFileList() {
+            const listContainer = document.getElementById('file-list');
+            const processBtn = document.getElementById('process-btn');
+            listContainer.innerHTML = '';
+
+            if (selectedFiles.length > 0) {
+                selectedFiles.forEach((file) => {
+                    listContainer.innerHTML += `<div class="bg-slate-900/60 p-3 rounded-lg border border-slate-700/50 flex items-center justify-between"><span><i class="fa-solid fa-file text-indigo-400 mr-2"></i>${file.name}</span> <span class="text-xs text-slate-500">${(file.size/1024).toFixed(1)} KB</span></div>`;
+                });
+                processBtn.classList.remove('hidden');
+            } else {
+                processBtn.classList.add('hidden');
+            }
+        }
+
+        function resetTool() {
+            selectedFiles = [];
+            document.getElementById('file-input').value = '';
+            document.getElementById('file-list').innerHTML = '';
+            document.getElementById('process-btn').classList.add('hidden');
+        }
+
+        function downloadBlob(blob, filename) {
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        async function processTask() {
+            if (selectedFiles.length === 0) return alert('Please select a file');
+
+            try {
+                if (currentTool === 'merge') {
+                    const mergedPdf = await PDFLib.PDFDocument.create();
+                    for (let file of selectedFiles) {
+                        const arrayBuffer = await file.arrayBuffer();
+                        const pdf = await PDFLib.PDFDocument.load(arrayBuffer);
+                        const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
+                        copiedPages.forEach((page) => mergedPdf.addPage(page));
+                    }
+                    const pdfBytes = await mergedPdf.save();
+                    downloadBlob(new Blob([pdfBytes], { type: 'application/pdf' }), 'merged.pdf');
+
+                } else if (currentTool === 'unlock') {
+                    const pass = document.getElementById('pdf-password').value;
+                    const arrayBuffer = await selectedFiles[0].arrayBuffer();
+                    const pdf = await PDFLib.PDFDocument.load(arrayBuffer, { password: pass });
+                    const pdfBytes = await pdf.save();
+                    downloadBlob(new Blob([pdfBytes], { type: 'application/pdf' }), 'unlocked.pdf');
+
+                } else if (['jpg2png', 'png2jpg', 'webp2png'].includes(currentTool)) {
+                    const file = selectedFiles[0];
+                    const img = new Image();
+                    img.src = URL.createObjectURL(file);
+                       <p class="text-sm text-slate-400">Photos ko ek PDF document banayein.</p>
             </div>
 
             <!-- Tool 6: PDF to Images -->
